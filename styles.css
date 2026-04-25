@@ -1,0 +1,231 @@
+/* Kishlay Kumar - SEBI RA Website Styles */
+/* WCAG 2.1 AA compliant, clean professional design */
+
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-muted: #4a4a4a;
+  --color-primary: #0b3d91;
+  --color-primary-dark: #082b66;
+  --color-accent: #c2410c;
+  --color-border: #d0d7de;
+  --color-surface: #f6f8fa;
+  --color-table-stripe: #f3f5f8;
+  --max-width: 1080px;
+  --radius: 6px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-fg);
+  background: var(--color-bg);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+.skip-link:focus { left: 0; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+header[role="banner"] {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 1.25rem 0;
+  border-bottom: 4px solid var(--color-primary-dark);
+}
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.brand h1 { margin: 0; font-size: 1.6rem; }
+.brand .tagline { margin: 0.15rem 0 0; font-size: 1rem; opacity: 0.95; }
+.brand .reg { margin: 0.15rem 0 0; font-size: 0.95rem; opacity: 0.95; }
+
+nav[aria-label="Primary"] ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 0.25rem 1rem;
+}
+nav[aria-label="Primary"] a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+nav[aria-label="Primary"] a:hover,
+nav[aria-label="Primary"] a:focus {
+  background: var(--color-primary-dark);
+  text-decoration: underline;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.nav-toggle { display: none; }
+
+/* Hero */
+.hero {
+  background: var(--color-surface);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.hero h2 { margin: 0 0 0.75rem; font-size: 2rem; color: var(--color-primary-dark); }
+.hero p { margin: 0; font-size: 1.1rem; color: var(--color-muted); max-width: 70ch; }
+
+/* Sections */
+main section { padding: 2.5rem 0; border-bottom: 1px solid var(--color-border); }
+main section:last-child { border-bottom: none; }
+main h2 { color: var(--color-primary-dark); margin-top: 0; font-size: 1.6rem; }
+main h3 { color: var(--color-primary); margin-top: 1.5rem; font-size: 1.2rem; }
+main h4 { margin-bottom: 0.25rem; font-size: 1.05rem; }
+main p, main li { color: var(--color-fg); }
+
+ul, ol { padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }
+
+a { color: var(--color-primary); }
+a:hover, a:focus { color: var(--color-accent); }
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Tables */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.info-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-muted);
+}
+.info-table th, .info-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+.info-table thead th {
+  background: var(--color-surface);
+  font-weight: 600;
+}
+.info-table tbody tr:nth-child(even) td,
+.info-table tbody tr:nth-child(even) th {
+  background: var(--color-table-stripe);
+}
+.info-table tbody tr:last-child td,
+.info-table tbody tr:last-child th { border-bottom: none; }
+
+.note {
+  background: #fff8e6;
+  border-left: 4px solid #d97706;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+}
+
+address {
+  font-style: normal;
+  background: var(--color-surface);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  display: inline-block;
+}
+
+/* Footer */
+footer[role="contentinfo"] {
+  background: #0c1e3a;
+  color: #e6ecf5;
+  padding: 1.75rem 0;
+  font-size: 0.95rem;
+}
+footer a { color: #9ec1ff; }
+footer p { margin: 0.4rem 0; }
+
+/* Responsive */
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: inline-block;
+    background: var(--color-primary-dark);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font: inherit;
+  }
+  nav[aria-label="Primary"] ul {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 0.75rem;
+  }
+  nav[aria-label="Primary"][data-open="true"] ul { display: flex; }
+  .hero h2 { font-size: 1.5rem; }
+  .info-table thead { display: none; }
+  .info-table, .info-table tbody, .info-table tr, .info-table td, .info-table th {
+    display: block;
+    width: 100%;
+  }
+  .info-table tr {
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: 0.5rem;
+  }
+  .info-table td, .info-table th {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+/* High-contrast / reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --color-fg: #000;
+    --color-muted: #000;
+    --color-border: #000;
+  }
+  a { text-decoration: underline; }
+}
