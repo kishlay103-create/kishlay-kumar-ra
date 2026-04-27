@@ -1,59 +1,47 @@
-# Kishlay Kumar — SEBI Registered Research Analyst
+# Kishlay Kumar, SEBI Registered Research Analyst
 
-Official website source for **Kishlay Kumar**, an individual SEBI Registered Research Analyst.
+Official website for **Kishlay Kumar**, SEBI Registered Research Analyst (Reg. No. **INH000022826**).
 
-- **SEBI Registration No.:** INH000022826
-- **Type:** Individual Research Analyst
-- **Regulator:** Securities and Exchange Board of India (SEBI)
+Built as a multi-page static site, modern fintech aesthetic in forest green + cream, fully SEBI-compliant, WCAG 2.1 AA accessible.
 
-## Live Site
+## Pages
 
-The site is published via GitHub Pages: `https://kishlay103-create.github.io/kishlay-kumar-ra/`
+- `index.html`, Home (hero, credentials, approach, formats, process, compliance band)
+- `about.html`, Registration details + philosophy + timeline
+- `services.html`, Research formats, methodology, fee structure, engagement
+- `compliance.html`, Investor Charter, 4-level grievance escalation, complaints data, disclosures, KYC notice, accessibility
+- `contact.html`, Direct channels + grievance routing
 
-## What This Site Contains
+## Tech
 
-The site is built to comply with SEBI's disclosure requirements for Research Analysts and to meet **WCAG 2.1 Level AA** accessibility standards (per SEBI's circular on digital accessibility under the Rights of Persons with Disabilities Act, 2016). Sections include:
+Plain HTML + CSS + a tiny JS file. No build step. The Home page also loads a Tweaks panel (React + Babel via CDN) that lets the owner change the "Get in touch" CTA color from the browser.
 
-- About / Registration details
-- Services Offered
-- Fee Structure (with reference to the SEBI fee cap and CeFCoM)
-- Investor Charter for Research Analysts
-- Grievance / Complaints Redressal mechanism (with SCORES & SmartODR links)
-- Monthly / Annual Complaints Data
-- Standard Disclosures &amp; Disclaimer
-- KYC Notice
-- Accessibility Statement
-- Contact
+## Hosting on GitHub Pages
 
-## Files
+1. Push the contents of this folder to the **root** of your repository (`kishlay103-create/kishlay-kumar-ra`) on the `main` branch.
+2. In the repo, go to **Settings → Pages**.
+3. Under **Source**, choose **Deploy from a branch**.
+4. Branch: `main`, Folder: `/ (root)`. Save.
+5. The site will be live at **https://kishlay103-create.github.io/kishlay-kumar-ra/** within a minute or two.
 
-- `index.html` — main page
-- `styles.css` — styling (clean, professional, responsive, accessible)
-- `script.js` — small enhancements (mobile nav toggle, current year)
+## Files in this folder
 
-## Action Items Before Going Live
+```
+index.html
+about.html
+services.html
+compliance.html
+contact.html
+styles.css
+script.js
+tweaks-panel.jsx   (only used by the Tweaks toggle on Home)
+README.md
+```
 
-Replace the following placeholders in `index.html` with your actual details:
+## Updating compliance data
 
-- `[YOUR EMAIL]`
-- `[YOUR PHONE]`
-- `[YOUR ADDRESS]`
-- `[BSE ENLISTMENT NO.]`
-- `[COMPLIANCE OFFICER NAME]` and other officer details
-- `[AMOUNT]` in the fee table
-- The complaints data table values, updated monthly
-
-## Accessibility
-
-- Semantic HTML5 landmarks (header / nav / main / section / footer)
-- Skip-to-content link
-- Sufficient colour contrast (WCAG AA)
-- Visible focus indicators
-- Responsive layout down to 320px width
-- Respects `prefers-reduced-motion` and `prefers-contrast`
+The complaints-data tables on `compliance.html` are placeholders showing zeros for the current month and the trailing months. SEBI requires these be updated within 7 days of month-end and the annual figures within 30 days of FY close. Edit the table rows in `compliance.html` directly.
 
 ## Disclaimer
 
-> Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.
-# kishlay-kumar-ra
-SEBI Registered Research Analyst Website - Kishlay umar (INH000022826) | WCAG 2.1 AA Compliant
+Investment in securities market is subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.
